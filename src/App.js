@@ -1,48 +1,16 @@
-import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 // import { Component } from "react";
 // import logo from "./logo.svg";
 import "./App.css";
-
-import CardList from "./components/card-list/card-list.component";
-import SearchBox from "./components/search-box/search-box.component";
+import HomePage from "./components/home-page/home-page.component";
+import User from "./components/user/user.component";
 
 const App = () => {
-	const [searchField, setSearchField] = useState("");
-	const [monsters, setMonsters] = useState([]);
-	const [filteredMonsters, setFilteredMonsters] = useState(monsters);
-
-	console.log("render");
-
-	useEffect(() => {
-		fetch("https://jsonplaceholder.typicode.com/users")
-			.then((response) => response.json())
-			.then((users) => setMonsters(users));
-	}, []);
-
-	useEffect(() => {
-		const newFilterMonsters = monsters.filter((monster) => {
-			return monster.name.toLocaleLowerCase().includes(searchField);
-		});
-		setFilteredMonsters(newFilterMonsters);
-	}, [monsters, searchField]);
-
-	const onSearchChange = (e) => {
-		const searchFieldString = e.target.value.toLocaleLowerCase();
-		setSearchField(searchFieldString);
-	};
-
 	return (
-		<div className="App">
-			<h1 className="text-5xl app-title">Monsters Rolodex</h1>
-			<SearchBox
-				onChangeHandler={onSearchChange}
-				placeholder="Search Monsters"
-				className="border"
-			/>
-			<div className="w-full flex items-center justify-center">
-				<CardList monsters={filteredMonsters} />
-			</div>
-		</div>
+		<Routes>
+			<Route path="/" element={<HomePage />} />
+			<Route path="/user" element={<User />} />
+		</Routes>
 	);
 };
 // class App extends Component {
