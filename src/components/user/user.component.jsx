@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const User = () => {
 	const [count, setCount] = useState(0);
 	const [users, setUsers] = useState([]);
-	const [arrayUsers, setArrayUsers] = useState([]);
+	
 
 	const handlerCount = () => setCount(count + 1);
 	const handlerCountDecre = () => setCount(count - 1);
@@ -24,7 +24,7 @@ const User = () => {
 		// console.log('name', data)
 		const addUser = [...users, newUser];
 		setUsers(addUser);
-		setCount(count + 1);
+		handlerCount()
 	};
 
 	useEffect(() => {
