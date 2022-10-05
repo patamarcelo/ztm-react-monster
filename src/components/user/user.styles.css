@@ -1,0 +1,42 @@
+.user-container .title {
+	font-size: 36px;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	margin-top: 40px;
+}
+
+.user-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    
+    justify-content: center;
+}
+button {
+	background-color: grey;
+	padding: 5px;
+	cursor: pointer;
+	border-radius: 4px;
+	border: 1px solid;
+	margin-top: 10px;
+}
+
+.container-counter {
+    width: 30%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-user-img {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-around;
+}
