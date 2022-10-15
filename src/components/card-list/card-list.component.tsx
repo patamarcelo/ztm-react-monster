@@ -9,7 +9,7 @@ type CardListProps = {
 const CardList = ({ monsters }: CardListProps) =>
 	<div className="card-list">
 		{monsters.map(monster => {
-			return <CardComponent monster={monster} />;
+			return <CardComponent key={monster.id} monster={monster} />;
 		})}
 	</div>;
 
